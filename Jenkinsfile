@@ -5,6 +5,7 @@ pipeline {
             steps {
                 echo 'Running build automation'
                 sh 'chmod +x gradlew'
+                sh './gradlew --version'
                 sh './gradlew build --no-daemon'
                 archiveArtifacts artifacts: 'dist/reactApp'
             }
